@@ -33,4 +33,4 @@ jobs:
               "text": "${{ matrix.message }}\n\n<${{ github.event.head_commit.url }}|View commit>"
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets[matrix.webhook] }}
+          SLACK_WEBHOOK_URL: ${{ secrets[matrix.webhook] }}
