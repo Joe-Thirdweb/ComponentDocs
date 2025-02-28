@@ -13,9 +13,11 @@ jobs:
         include:
           - channel: 'C04JE7MMM1R'
             name: 'biz-solutions'
+            webhook: 'SLACK_WEBHOOK_URL'
             message: 'Hello biz-solutions New commit in ${{ github.repository }}'
           - channel: 'C04EV47SVRN'
             name: 'business-team'
+            webhook: 'SLACK_WEBHOOK_URLB'
             message: 'Hello business team! Update in ${{ github.repository }}'
 
     steps:
@@ -31,4 +33,4 @@ jobs:
               "text": "${{ matrix.message }}\n\n<${{ github.event.head_commit.url }}|View commit>"
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets[matrix.webhook] }}
