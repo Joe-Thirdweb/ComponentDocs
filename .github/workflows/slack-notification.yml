@@ -1,4 +1,4 @@
-name: Slack Notification on Main Branch Update
+name: Slack Notification on Main Branch Commit
 
 on:
   push:
@@ -6,8 +6,18 @@ on:
       - main
 
 jobs:
-  notify-slack:
+  notify_slack:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - channel: 'C04JE7MMM1R'
+            name: 'biz-solutions'
+            message: 'Hello biz-solutions New commit in ${{ github.repository }}'
+          - channel: 'C04EV47SVRN'
+            name: 'business-team'
+            message: 'Hello business team! Update in ${{ github.repository }}'
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,38 +25,10 @@ jobs:
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v1.24.0
         with:
+          channel-id: ${{ matrix.channel }}
           payload: |
             {
-              "text": "New update to main branch in ${{ github.repository }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*New update to main branch* :rocket:"
-                  }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n${{ github.repository }}"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Commit:*\n${{ github.sha }}"
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "<${{ github.event.head_commit.url }}|View commit>"
-                  }
-                }
-              ]
+              "text": "${{ matrix.message }}\n\n<${{ github.event.head_commit.url }}|View commit>"
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
