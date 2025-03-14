@@ -5,4 +5,4 @@ The thirdweb Faucet provides free testnet {token} on the {chain} - one claim per
 ## Need extra help?
 
 Read our guide!
-{% embed url="https://thirdweb.com/community/startup-program" %}
+https://thirdweb.com/community/startup-program
