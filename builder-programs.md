@@ -14,4 +14,4 @@ thirdweb, we're committed to ensuring that the next wave of consumer application
 * 3 Months of Growth for $0 ($297 Value)
 * 3 Months of Standard Engine $0 ($297 Value)
 
-{% embed url="https://thirdweb.com/community/startup-program" %}
+https://thirdweb.com/community/startup-program
