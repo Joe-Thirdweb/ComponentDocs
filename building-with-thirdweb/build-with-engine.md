@@ -4,4 +4,4 @@ Looking to build robust blockchain applications? In this guide, we'll explore [t
 
 ## Click the guide below!
 
-{% embed url="https://blog.thirdweb.com/guides/blockchain-api-basics-series-backend-wallets-with-engine/" %}
+https://blog.thirdweb.com/guides/blockchain-api-basics-series-backend-wallets-with-engine/
