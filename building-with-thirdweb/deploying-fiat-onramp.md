@@ -4,4 +4,4 @@ In this guide, we'll walk through the process of setting up thirdweb Universal B
 
 ## Click the guide below!
 
-{% embed url="https://blog.thirdweb.com/guides/setting-up-thirdweb-pay-api-key-fee-sharing-webhooks-integration-guide/" %}
+https://blog.thirdweb.com/guides/setting-up-thirdweb-pay-api-key-fee-sharing-webhooks-integration-guide/
